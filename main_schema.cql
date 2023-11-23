@@ -1,3 +1,9 @@
+CREATE KEYSPACE mykeyspace
+WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '2'}
+AND durable_writes = true;
+
+USE mykeyspace;
+
 -- Products Table
 CREATE TABLE Products (
     ProductID UUID PRIMARY KEY,
