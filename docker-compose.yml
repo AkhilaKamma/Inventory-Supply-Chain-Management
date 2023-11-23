@@ -5,6 +5,8 @@ services:
       - "9042:9042"
     volumes:
       - ./main_schema.cql:/usr/local/bin/main_schema.cql
+      - ./insert_data.cql:/usr/local/bin/insert_data.cql
+      - ./retrieve_data.cql:/usr/local/bin/retrieve_data.cql
       - ./execute-cql.sh:/usr/local/bin/execute-cql.sh
   cassandra-2:
     image: cassandra:latest
@@ -12,6 +14,8 @@ services:
       - "9043:9042"
     volumes:
       - ./main_schema.cql:/usr/local/bin/main_schema.cql
+      - ./insert_data.cql:/usr/local/bin/insert_data.cql
+      - ./retrieve_data.cql:/usr/local/bin/retrieve_data.cql
       - ./execute-cql.sh:/usr/local/bin/execute-cql.sh
   cassandra-3:
     image: cassandra:latest
@@ -19,6 +23,8 @@ services:
       - "9044:9042"
     volumes:
       - ./main_schema.cql:/usr/local/bin/main_schema.cql
+      - ./insert_data.cql:/usr/local/bin/insert_data.cql
+      - ./retrieve_data.cql:/usr/local/bin/retrieve_data.cql
       - ./execute-cql.sh:/usr/local/bin/execute-cql.sh
 
 networks:
