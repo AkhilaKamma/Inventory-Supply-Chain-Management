@@ -1,18 +1,25 @@
-version: '3'
-
 services:
-  cassandra:
-    image: cassandra
-    container_name: cassandra-container
+  cassandra-1:
+    image: cassandra:latest
     ports:
       - "9042:9042"
-      - "7001:7001"
-      - "9160:9160"
-      - "7199:7199"
-    environment:
-      - CASSANDRA_SEEDS=cassandra
-    networks:
-      - cassandra-network
+    volumes:
+      - ./main_schema.cql:/usr/local/bin/main_schema.cql
+      - ./execute-cql.sh:/usr/local/bin/execute-cql.sh
+  cassandra-2:
+    image: cassandra:latest
+    ports:
+      - "9043:9042"
+    volumes:
+      - ./main_schema.cql:/usr/local/bin/main_schema.cql
+      - ./execute-cql.sh:/usr/local/bin/execute-cql.sh
+  cassandra-3:
+    image: cassandra:latest
+    ports:
+      - "9044:9042"
+    volumes:
+      - ./main_schema.cql:/usr/local/bin/main_schema.cql
+      - ./execute-cql.sh:/usr/local/bin/execute-cql.sh
 
 networks:
   cassandra-network:
