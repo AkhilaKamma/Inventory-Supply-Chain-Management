@@ -6,7 +6,11 @@ services:
     volumes:
       - ./main_schema.cql:/usr/local/bin/main_schema.cql
       - ./insert_data.cql:/usr/local/bin/insert_data.cql
+      - ./insert_order_details.cql:/usr/local/bin/insert_order_details.cql
       - ./retrieve_data.cql:/usr/local/bin/retrieve_data.cql
+      - ./update_data.cql:/usr/local/bin/update_data.cql
+      - ./delete_data.cql:/usr/local/bin/delete_data.cql
+      - ./fragmentation.cql:/usr/local/bin/fragmentation.cql
       - ./execute-cql.sh:/usr/local/bin/execute-cql.sh
   cassandra-2:
     image: cassandra:latest
@@ -15,7 +19,11 @@ services:
     volumes:
       - ./main_schema.cql:/usr/local/bin/main_schema.cql
       - ./insert_data.cql:/usr/local/bin/insert_data.cql
+      - ./insert_order_details.cql:/usr/local/bin/insert_order_details.cql
       - ./retrieve_data.cql:/usr/local/bin/retrieve_data.cql
+      - ./update_data.cql:/usr/local/bin/update_data.cql
+      - ./delete_data.cql:/usr/local/bin/delete_data.cql
+      - ./fragmentation.cql:/usr/local/bin/fragmentation.cql
       - ./execute-cql.sh:/usr/local/bin/execute-cql.sh
   cassandra-3:
     image: cassandra:latest
@@ -24,7 +32,11 @@ services:
     volumes:
       - ./main_schema.cql:/usr/local/bin/main_schema.cql
       - ./insert_data.cql:/usr/local/bin/insert_data.cql
+      - ./insert_order_details.cql:/usr/local/bin/insert_order_details.cql
       - ./retrieve_data.cql:/usr/local/bin/retrieve_data.cql
+      - ./update_data.cql:/usr/local/bin/update_data.cql
+      - ./delete_data.cql:/usr/local/bin/delete_data.cql
+      - ./fragmentation.cql:/usr/local/bin/fragmentation.cql
       - ./execute-cql.sh:/usr/local/bin/execute-cql.sh
 
 networks:

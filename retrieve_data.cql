@@ -13,12 +13,3 @@ SELECT * FROM Suppliers;
 
 -- Retrieve data from Orders Table
 SELECT * FROM Orders;
-
--- Retrieve data from OrderDetails Table
-SELECT * FROM OrderDetails;
-
--- Retrieve data from Shipments Table
-SELECT * FROM Shipments;
-
--- Retrieve data from InventoryLevels Table
-SELECT * FROM InventoryLevels;
