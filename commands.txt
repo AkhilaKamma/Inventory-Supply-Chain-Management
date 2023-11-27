@@ -1,7 +1,0 @@
-python -m venv venv
-
-pip install cassandra-driver
-
-docker build -t cassandra .
-
-docker-compose up -d

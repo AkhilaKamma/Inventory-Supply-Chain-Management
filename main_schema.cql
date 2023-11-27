@@ -1,5 +1,5 @@
 CREATE KEYSPACE mykeyspace
-WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '2'}
+WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}
 AND durable_writes = true;
 
 USE mykeyspace;
