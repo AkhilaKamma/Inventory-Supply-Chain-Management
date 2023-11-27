@@ -4,12 +4,14 @@ services:
     ports:
       - "9042:9042"
     volumes:
-      - ./main_schema.cql:/usr/local/bin/main_schema.cql
-      - ./insert_data.cql:/usr/local/bin/insert_data.cql
-      - ./insert_order_details.cql:/usr/local/bin/insert_order_details.cql
-      - ./retrieve_data.cql:/usr/local/bin/retrieve_data.cql
-      - ./update_data.cql:/usr/local/bin/update_data.cql
-      - ./delete_data.cql:/usr/local/bin/delete_data.cql
+      - ./cql_directory/main_schema.cql:/usr/local/bin/main_schema.cql
+      - ./cql_directory/insert_data.cql:/usr/local/bin/insert_data.cql
+      - ./cql_directory/insert_order_details.cql:/usr/local/bin/insert_order_details.cql
+      - ./cql_directory/retrieve_data.cql:/usr/local/bin/retrieve_data.cql
+      - ./cql_directory/update_data.cql:/usr/local/bin/update_data.cql
+      - ./cql_directory/specific_category.cql:/usr/local/bin/specific_category.cql
+      - ./cql_directory/customer_query.cql:/usr/local/bin/customer_query.cql
+      - ./cql_directory/delete_data.cql:/usr/local/bin/delete_data.cql
 
 networks:
   cassandra-network:

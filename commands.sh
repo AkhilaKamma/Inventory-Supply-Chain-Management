@@ -20,6 +20,11 @@ docker exec -i inventory-supply-chain-management-cassandra-1-1 cqlsh -f /usr/loc
 echo "Updating data in the tables"
 docker exec -i inventory-supply-chain-management-cassandra-1-1 cqlsh -f /usr/local/bin/update_data.cql
 
+echo "Retrieve the order history for a specific customer"
+docker exec -i inventory-supply-chain-management-cassandra-1-1 cqlsh -f /usr/local/bin/specific_category.cql
+
+echo "Retrieve the suppliers for a specific product category"
+docker exec -i inventory-supply-chain-management-cassandra-1-1 cqlsh -f /usr/local/bin/customer_query.cql
+
 echo "Deleting data from the tables"
 docker exec -i inventory-supply-chain-management-cassandra-1-1 cqlsh -f /usr/local/bin/delete_data.cql
-
