@@ -2,7 +2,7 @@
 
 echo "Starting the Cassandra containers"
 docker build -t cassandra .
-docker-compose up -d --build
+docker-compose up -d
 
 echo "Waiting for 2 minutes for the Cassandra containers to start properly"
 sleep 120
