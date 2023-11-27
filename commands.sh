@@ -20,10 +20,6 @@ docker exec -i inventory-supply-chain-management-cassandra-1-1 cqlsh -f /usr/loc
 echo "Updating data in the tables"
 docker exec -i inventory-supply-chain-management-cassandra-1-1 cqlsh -f /usr/local/bin/update_data.cql
 
-echo "Performing fragmentation"
-docker exec -i inventory-supply-chain-management-cassandra-1-1 cqlsh -f /usr/local/bin/fragmentation.cql
-docker exec -i inventory-supply-chain-management-cassandra-1-1 cqlsh -f /usr/local/bin/retrieve_data.cql
-
 echo "Deleting data from the tables"
 docker exec -i inventory-supply-chain-management-cassandra-1-1 cqlsh -f /usr/local/bin/delete_data.cql
 
