@@ -1,72 +1,81 @@
-## Project Overview
+# ISP_Part5
 
-**Team Name:** Data Heroes  
-**Team Members:**
-- Avi Mehta (ID: 1225539835)
-- Akhila Kamma (ID: 1225665389)
-- Jay Dinesh Mehta (ID: 1225461367)
-- Ashutosh Chaurasia (ID: 1229969197)
+## Overview
 
-**Project Topic:** Inventory and Supply Chain Management
+This part implements a distributed NoSQL database system using Apache Cassandra. It focuses on understanding data storage and retrieval processes within the context of inventory and supply chain management. The system is designed to manage products, warehouses, suppliers, orders, and related operations in a scalable and efficient manner.
 
-The project aims to design and implement a distributed database system for efficient inventory and supply chain management. This system will enable real-time data updates and queries, optimizing inventory tracking, order processing, and supply chain operations.
+## Problem Statement
 
-## Database Structure
+The goal is to develop a NoSQL database system tailored to the specific needs of inventory and supply chain management. The system should efficiently handle various data types and relationships pertinent to this domain.
 
-The tentative database structure includes tables for:
-- Products
-- Warehouses
-- Suppliers
-- Orders
-- Shipments
-- Inventory Levels
+## Features
 
-These tables will be interconnected to capture the flow of products throughout the supply chain.
+- **NoSQL Data Modeling**: Custom data schema and model designed for inventory and supply chain management.
+- **CRUD Operations**: Implementation of Create, Read, Update, Delete operations for managing data.
+- **Data Retrieval and Queries**: Sample queries to showcase database functionality and data retrieval capabilities.
 
-## Plan of Action
+## Components
 
-### Part 1: Design and Implementation of a Distributed Database System
+1. **Cassandra Database**: A distributed NoSQL database used for storing and managing large amounts of data.
+2. **Docker**: Containerization of the Cassandra database for easy deployment and scalability.
+3. **CQL Scripts**: Cassandra Query Language scripts for creating schema, inserting data, updating, and querying.
 
-- **Tasks:** Design the database schema, select an appropriate distributed database management system (e.g., Apache Cassandra), and implement the distributed database.
-- **Tools:** Apache Cassandra, DataStax Enterprise, Python for database implementation.
-- **Expected Deliverables:** A distributed database system with the defined schema.
+## Installation and Setup
 
-### Part 2: Fragmentation and Replication Techniques
+1. **Docker and Docker Compose**: Ensure Docker and Docker Compose are installed on your system.
+2. **Build and Run Containers**:
+   - Use `docker build -t cassandra .` to build the Cassandra image.
+   - Use `docker-compose up -d` to start the containers.
+3. **Database Initialization**:
+   - Execute `docker exec -i inventory-supply-chain-management-cassandra-1-1 cqlsh -f /usr/local/bin/main_schema.cql` to create the keyspace and tables.
+   - Insert data using the provided CQL scripts or directly run commands.sh to run the entire project.
+4. **Database Access**:
+   - Use `docker exec -it inventory-supply-chain-management-cassandra-1-1 cqlsh` to access the Cassandra shell.
+   - Use `docker exec -it inventory-supply-chain-management-cassandra-1-1 bash` to access the container shell.
 
-- **Tasks:** Identify data fragmentation criteria (e.g., by product category or region) and implement data fragmentation. Set up data replication for fault tolerance.
-- **Tools:** Cassandra's built-in support for data partitioning and replication.
-- **Expected Deliverables:** Fragmented and replicated database with a clear strategy for data distribution.
+## Usage
 
-### Part 3: Query Processing and Optimization Techniques
+- **CRUD Operations**: Use the provided CQL scripts to perform CRUD operations on the database.
+- **Data Retrieval**: Execute specific queries to retrieve data related to orders, products, warehouses, etc.
 
-- **Tasks:** Implement query processing and optimization techniques to ensure fast and efficient data retrieval. Utilize Cassandra's query optimization features.
-- **Tools:** Apache Cassandra's query language (CQL), query optimization tools.
-- **Expected Deliverables:** Optimized queries for real-time inventory tracking and supply chain analysis.
+## Project Structure
 
-### Part 4: Distributed Transaction Management
+- **Dockerfile**: Configuration for building the Cassandra Docker image.
+- **docker-compose.yml**: Defines services, networks, and volumes for the Cassandra containers.
+- **cql_directory/**: Contains all CQL scripts for schema creation, data insertion, updating, and deletion.
 
-- **Tasks:** Develop a distributed transaction management system to handle inventory updates, order processing, and supply chain transactions. Implement distributed transaction protocols.
-- **Tools:** Cassandra's support for lightweight transactions, Apache ZooKeeper for distributed coordination.
-- **Expected Deliverables:** Reliable and consistent transaction management system.
+## Sample Queries
 
-### Part 5: Distributed NoSQL Database Systems Implementation
+- Retrieve details of all products.
+- Get information about specific warehouses.
+- Fetch orders for a particular customer.
+- Update product prices and order statuses.
 
-- **Tasks:** Integrate a NoSQL database system (e.g., Apache Cassandra) to store unstructured or semi-structured data related to inventory and supply chain events (e.g., sensor data, shipment tracking).
-- **Tools:** Apache Cassandra for NoSQL data storage.
-- **Expected Deliverables:** NoSQL data storage and retrieval capabilities integrated with the main database.
+## Deliverables
 
-### Part 6: 3-Minute Video Demo
+- **Code/Scripts**: Dockerfile, docker-compose file, and CQL scripts.
+- **Documentation**: This README file.
+- **Snapshots**: Screenshots or snapshots demonstrating the functionality.
 
-- **Tools:** Video editing software (e.g., Adobe Premiere Pro), screen recording software (e.g., OBS Studio).
-- **Other Details:** The video will provide a comprehensive overview of the distributed database system and its capabilities in managing inventory and supply chains efficiently.
+## Tools
 
-## Project Signature
+- **Cassandra**: For database management.
+- **Docker**: For containerization and deployment.
+- **Bash Script**: For automating the setup and initialization process.
 
-Avi Mehta (A.M)  
-Jay Dinesh Mehta (J.M)  
-Akhila Kamma (A.K)  
-Ashutosh Chaurasia (A.C)
+## Outputs and Screenshots
+
+- **Docker Containers**: Cassandra containers running on Docker.
+![Cassandra init docker](/Screenshots/init.png)
+
+- **CQL Scripts**: CQL scripts for creating schema, inserting data, updating.
+![Cassandra init docker](/Screenshots/CRUD1.png)
+
+- **CQL Scripts**: CQL scripts for querying.
+![Cassandra init docker](/Screenshots/querying.png)
+
+## Conclusion
+
+This project demonstrates the implementation of a NoSQL database system using Apache Cassandra, tailored for inventory and supply chain management. It highlights how Cassandra can be used to manage complex data relationships and large-scale data in a distributed environment.
 
 ---
-
-This README outlines our team's project proposal for CSE 512: Distributed Database Systems in Fall 2023. We are excited to embark on this journey to create an efficient distributed database system for inventory and supply chain management.
