@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# echo "Starting the Cassandra containers"
-# docker build -t cassandra .
-# docker-compose up -d --build
+echo "Starting the Cassandra containers"
+docker build -t cassandra .
+docker-compose up -d --build
 
-# echo "Waiting for 2 minutes for the Cassandra containers to start properly"
-# sleep 120
+echo "Waiting for 2 minutes for the Cassandra containers to start properly"
+sleep 120
 
 echo "Creating keyspace and tables"
 docker exec -i inventory-supply-chain-management-cassandra-1-1 cqlsh -f /usr/local/bin/main_schema.cql
