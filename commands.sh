@@ -4,7 +4,7 @@ echo "Starting the Cassandra container"
 docker build -t cassandra .
 docker-compose up -d
 
-echo "Waiting for 2 minutes for the Cassandra containers to start properly"
+echo "Waiting for 2 minutes for the Cassandra container to start properly"
 sleep 120
 
 echo "Creating keyspace and tables"
