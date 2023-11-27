@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Starting the Cassandra containers"
+echo "Starting the Cassandra container"
 docker build -t cassandra .
 docker-compose up -d
 
