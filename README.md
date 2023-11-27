@@ -66,13 +66,13 @@ The goal is to develop a NoSQL database system tailored to the specific needs of
 ## Outputs and Screenshots
 
 - **Docker Containers**: Cassandra containers running on Docker.
-![Cassandra init docker](/Screenshots/init.png)
+![Cassandra init docker](Screenshots/init.png)
 
 - **CQL Scripts**: CQL scripts for creating schema, inserting data, updating.
-![Cassandra init docker](/Screenshots/CRUD1.png)
+![Cassandra init docker](Screenshots/CRUD1.png)
 
 - **CQL Scripts**: CQL scripts for querying.
-![Cassandra init docker](/Screenshots/querying.png)
+![Cassandra init docker](Screenshots/querying.png)
 
 ## Conclusion
 
